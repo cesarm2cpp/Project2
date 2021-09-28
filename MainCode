@@ -3,21 +3,41 @@
 int main()
 {
     int days;
-    int Time;
+    int arrival;
+    int departer;
+    int roundTrip;
+    int miles;
+    int parkingFees;
+    int daysParking;
+    int taxi;
+    int taxiDays;
+    int confSemFees;
+    int hotel;
+    
     printf("\nInput the total amount of days: ");
     scanf("%d", &days);
     printf("\nThe time of arrival: ");
+    scanf("%d", &arrival);
     printf("\nThe time of departer:" );
-    printf("\nAmount of the round trup airfare: ");
+    scanf("%d", &departer);
+    printf("\nAmount of the round trip airfare: ");
+    scanf("%d", &roundTrip);
     printf("\nDid you rent any car?: ");
     printf("\nHow many miles did you drive in your private vehicle" );
+    scanf("%d", &miles);
     printf("\nParking fees during trip: ");
+    scanf("%d", &parkingFees);
     printf("\nAmount of days you used the parking: ");
+    scanf("%d", &daysParking);
     printf("\nDid you use the taxi: ");
     printf("\nTaxi fees: ");
+    scanf("%d", &taxi);
     printf("\nAmount of days used on taxi: ");
+    scanf("%d", &taxiDays);
     printf("\nConference or seminar registration fees: ");
+    scanf("%d", &confSemFees);
     printf("\nAny hotel expenses: ");
+    scanf("%d", &hotel);
     
     return 0;
 }
