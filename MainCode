@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int days;
+    int Time;
+    printf("\nInput the total amount of days: ");
+    scanf("%d", &days);
+    printf("\nThe time of arrival: ");
+    printf("\nThe time of departer:" );
+    printf("\nAmount of the round trup airfare: ");
+    printf("\nDid you rent any car?: ");
+    printf("\nHow many miles did you drive in your private vehicle" );
+    printf("\nParking fees during trip: ");
+    printf("\nAmount of days you used the parking: ");
+    printf("\nDid you use the taxi: ");
+    printf("\nTaxi fees: ");
+    printf("\nAmount of days used on taxi: ");
+    printf("\nConference or seminar registration fees: ");
+    printf("\nAny hotel expenses: ");
+    
+    return 0;
+}
