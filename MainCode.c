@@ -19,12 +19,12 @@ int main()
     int hotelDays;  // can be different from totalDays Ex: we can go 4 days and 3 nights
 
     totalDays = getUserInt("Please enter total travel days: ");
-    printf("Total travel days: %d", totalDays);
+    printf("Total travel days: %d\n", totalDays);
     
-    arrivalTime = getBoundedNum("Enter departure time (0..24 military time) ",0,24);
-    departTime = getBoundedNum("Enter arrival time (0..24 military time) ",0,24);
-    printf("\nConfirm the departure time is: %d", departTime);
-    printf("\nConfirm the arrival time is: %d", arrivalTime);
+    departTime = getBoundedNum("Enter departure time (0..24 military time) ",0,24);
+    arrivalTime = getBoundedNum("Enter arrival time (0..24 military time) ",0,24);
+    printf("\nConfirm the departure time is: %lf", departTime);
+    printf("\nConfirm the arrival time is: %lf", arrivalTime);
 
     return 0;
     // char carRental[1];

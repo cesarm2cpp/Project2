@@ -1,6 +1,7 @@
 #include "Tools.h"
-#include <limits.h>
 
+//  Declaration for the definition from Tools.h
+const double GAS_PRICE_PER_MILE = 0.27;
 
 /* get integer input from user */
 int getUserInt(char *prompt)
@@ -15,13 +16,13 @@ int getUserInt(char *prompt)
 }
 
 /* get double input from user */
-double getDouble(char *prompt)
+double getUserDouble(char *prompt)
 {
     double userInput;
     do
     {
         printf(prompt);
-        scanf("%d",&userInput);
+        scanf("%lf",&userInput);
     } while (userInput < 0);
     return userInput;
 }
@@ -32,7 +33,7 @@ double getBoundedNum(char *prompt, double lowBound, double highBound)
     double userInput;
     while(1) // any non-zero number used as condition is treated as TRUE
     {
-        userInput = getDouble(prompt);
+        userInput = getUserDouble(prompt);
         if (lowBound <= userInput && userInput <= highBound)
             break;
         printf("\nPlease enter a value in the range [%d..%d] ",lowBound,highBound);
@@ -43,7 +44,7 @@ double getBoundedNum(char *prompt, double lowBound, double highBound)
 /* get the lowerbound b/w given lower bound and max*/
 double getLowerBoundedNum(char *prompt, double lowBound)
 {
-    return getBoundedNum(prompt, lowBound, INT_MAX);        // INT_MAX is defined in <limit.h>
+    return getBoundedNum(prompt, lowBound, INT_MAX);   // INT_MAX is defined in <limit.h>
 }
 
 /* get positive double/float/integer */
