@@ -7,7 +7,7 @@ int main()
     double arrivalTime;
     double departTime;
     double airFare;
-    double carRental;
+    double carRent;
     int miles;
     double privateCar;
     double milesDriven;
