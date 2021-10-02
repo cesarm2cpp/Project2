@@ -22,33 +22,44 @@ int main()
     int taxiDays;
     double hotelFee;
     int hotelDays;  // can be different from totalDays Ex: we can go 4 days and 3 nights
+    char carRental[10];
+    char taxiUse[10];
+    
 
-    //totalDays = getUserInt("Please enter total travel days: ");
-    printf("Total travel days: %d\n", totalDays);
+    printf("Total travel days:");
+    scanf("%d", &totalDays);
     
-    //departTime = getBoundedNum("Enter departure time (0..24 military time) ",0,24);
-    //arrivalTime = getBoundedNum("Enter arrival time (0..24 military time) ",0,24);
-    printf("\nConfirm the departure time is: %lf", departTime);
-    printf("\nConfirm the arrival time is: %lf", arrivalTime);
+    printf("Enter departure time (0..24 military time)");
+    scanf("%lf", &arrivalTime);
+    printf("Enter arrival time (0..24 military time)");
+    scanf("%lf", &departTime);
 
-    
-    char carRental[1];
-    char taxiUse[1];
-    
     printf("\nAmount of the round trip airfare: ");
     scanf("%lf", &airFare);
-    printf("\nDid you rent any car?(Y or N): ");
+    printf("\nDid you rent any car?(y or n):");
     scanf("%s", carRental);
-    printf("\nHow many miles did you drive in your private vehicle" );
-    scanf("%d", &miles);
+    if(carRental == "y")
+    {
+        printf("\nHow many miles did you drive in your private vehicle:" );
+        scanf("%d", &miles);
+    }
+    else if(carRental == "n"){
+        printf("No car was rented");
+    }
     printf("\nParking fees during trip: ");
     scanf("%lf", &parkingFees);
     printf("\nAmount of days you used the parking: ");
     scanf("%d", &parkingDays);
-    printf("\nDid you use the taxi(Y or N): ");
+    printf("\nDid you use the taxi(y or n):");
     scanf("%s", taxiUse);
-    printf("\nTaxi fees: ");
-    scanf("%lf", &taxiFee);
+    if(taxiUse == "y")
+    {
+        printf("\nTaxi fees: ");
+        scanf("%lf", &taxiFee);
+    }
+    else{
+        printf("No taxi was used");
+    }
     printf("\nAmount of days used on taxi: ");
     scanf("%d", &taxiDays);
     printf("\nConference or seminar registration fees: ");
