@@ -3,16 +3,15 @@
 int main()
 {
     int days;
-    int arrival;
-    int departer;
-    int roundTrip;
+    double arrival;
+    double departer;
+    double roundTrip;
+    double carRental; 
     int miles;
-    int parkingFees;
-    int daysParking;
-    int taxi;
-    int taxiDays;
-    int confSemFees;
-    int hotel;
+    double parkingFees;
+    double taxi;
+    double confSemFees;
+    double hotel;
     
     char carRental[1];
     char taxiUse[1];
