@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include "Tools.h"
+#include "calculate.c"
+
+int writeCalculations(int miles, double milesDriven) {
+    printf("Miles Fees: %f/n", calculateMiles(miles, milesDriven));
+}
 
 int main()
 {
@@ -126,12 +131,12 @@ int main()
         printf("Taxi fees: ");
         scanf("%lf", &taxiFee);
         do{
-            if(taxiUse<minTime){
+            if(taxiFee<minTime){// taxiUse -> taxiFee
                 printf("\nFees are not negative");
                 printf("\nTaxi fees: ");
                 scanf("%lf", &taxiFee);
             }
-        }while(taxiUse<minTime);
+        }while(taxiFee<minTime);// taxiUse -> taxiFee
     }
     else{
         printf("No taxi was used");
@@ -163,6 +168,8 @@ int main()
             scanf("%lf", &hotelFee);
         }
     }while(hotelFee<minTime);
+
+    writeCalculations(miles, milesDriven);
     
     return 0;
 }
