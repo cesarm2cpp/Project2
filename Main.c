@@ -29,7 +29,7 @@ int main()
     double hotelFee;
     int hotelDays;  // can be different from totalDays Ex: we can go 4 days and 3 nights
     char carRental[10];
-    char taxiUse[10];
+    char taxiUse[10]; 
     double minTime = 0.0; //min number is 1
     double maxTime = 24.0; //max number is 10
     
