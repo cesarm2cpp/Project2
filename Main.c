@@ -2,8 +2,9 @@
 #include "Tools.h"
 #include "calculate.c"
 
-int writeCalculations(int miles, double milesDriven) {
-    printf("Miles Fees: %f/n", calculateMiles(miles, milesDriven));
+int writeCalculations(int miles, double milesDriven, double parkingFees) {
+    printf("Miles Fees: %f\n", calculateMiles(miles, milesDriven));
+    printf("Parking Fees: %f\n", parkingFees);
 }
 
 int main()
@@ -169,7 +170,7 @@ int main()
         }
     }while(hotelFee<minTime);
 
-    writeCalculations(miles, milesDriven);
+    writeCalculations(miles, milesDriven, parkingFees);
     
     return 0;
 }
