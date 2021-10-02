@@ -30,7 +30,6 @@ int main()
     printf("\nConfirm the departure time is: %lf", departTime);
     printf("\nConfirm the arrival time is: %lf", arrivalTime);
 
-    return 0;
     char carRental[1];
     char taxiUse[1];
     
