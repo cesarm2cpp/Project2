@@ -13,14 +13,14 @@ int calculateMiles(int miles, double milesDriven) {// $0.27 per mile driven
     return milesDriven;
 }
 
-// // Calculate Parking Fees
-// int calculateParkingFees(double parkingFees) {// company PARKING_COVERED_PER_DAY = 6
-//     parkingFees = (parkingFees - PARKING_COVERED_PER_DAY);
-//     if(parkingFees < 0) {
-//         parkingFees = 0;
-//     }
-//     return parkingFees;
-// }
+// Calculate Parking Fees
+int calculateParkingFees(double parkingFees) {// company PARKING_COVERED_PER_DAY = 6
+    parkingFees = (parkingFees - PARKING_COVERED_PER_DAY);
+    if(parkingFees < 0) {
+        parkingFees = 0;
+    }
+    return parkingFees;
+}
 
 // // Calculate Taxi Fees
 // int calculateTaxiFees(char taxiUse, double taxiFee) {// company TAXI_COVERED_PER_DAY = 10
