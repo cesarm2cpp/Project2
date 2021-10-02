@@ -5,14 +5,16 @@
 #include <string.h> // if you use a struct or union.
 
 // Global Calculation Vars
-//int carRentals;
+int days;
+int arrival;
+int departer;
+int roundTrip;
 int miles;// $0.27 per mile driven
 int parkingFees;// company= $6*daysParking, if(negative): var=0
 int daysParking;
 int taxi;// company= $10*taxiDays, if(negative): var=0
 int taxiDays;
 int hotelFee;// company= $90*hotelNights, if(negative): var=0
-int hotelNights;
 int meals;// (for allowable meals) breakfast + lunch + dinner
 int breakfast;// company= $9, if(negative): var=0
 int lunch;// company= $12, if(negative): var=0
