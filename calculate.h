@@ -7,7 +7,7 @@
 // Global Calculation Vars
 int days;
 int arrival;
-int departer;
+int departure;
 int roundTrip;
 int miles;// $0.27 per mile driven
 int parkingFees;// company= $6*daysParking, if(negative): var=0
