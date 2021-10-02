@@ -4,20 +4,18 @@
 */  
 
 // Calculate Miles Driven in Private Vehicle
-int calculateMiles(int miles, double milesDriven) {// $0.27 per mile driven
-    if(miles > 0) {
-        milesDriven = miles * GAS_PRICE_PER_MILE;
-    } else {
-        milesDriven = 0;
-    }
+int calculateMiles(int miles) {// $0.27 per mile driven
+    double milesDriven;
+    milesDriven = miles * GAS_PRICE_PER_MILE;
+    
     return milesDriven;
 }
 
 // Calculate Parking Fees
-int calculateParkingFees(double parkingFees) {// company PARKING_COVERED_PER_DAY = 6
-    parkingFees = (parkingFees - PARKING_COVERED_PER_DAY);
-    if(parkingFees < 0) {
-        parkingFees = 0;
+int calculateParkingFees(double parkingFees, int parkingDays) {// company PARKING_COVERED_PER_DAY = 6
+    parkingFees = parkingFees - (PARKING_COVERED_PER_DAY * parkingDays);
+    if(parkingFees < 0.0) {
+        parkingFees = 0.00;
     }
     return parkingFees;
 }
