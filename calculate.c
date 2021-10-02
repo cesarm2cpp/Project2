@@ -134,126 +134,126 @@ float *calMealCost(int numOfDays, float time[2])
     case 1:
         if (numOfDays == 1)
         {
-            if (time[0] <= 7)
+        if (time[0] <= 7)
             {
-                if (time[1] > 13 && time[1] < 19)
+         if (time[1] > 13 && time[1] < 19)
                 {
                     run = 1;
-                    while (run == 1)
+       while (run == 1)
                     {
-                        printf("\nEnter amount for breakfast:");
-                        scanf("%f", &breakfast);
-                        printf("\nEnter amount for lunch:");
-                        scanf("%f", &lunch);
-                        printf("\nEnter amount for Dinner:");
-                        scanf("%f", &dinner);
-                        if (breakfast < 0 || lunch < 0 || dinner < 0)
-                        {
-                            printf("Invalid cost input!Try Again.");
-                            continue;
-                        }
-                        else
-                        {
-                            dinnerCosts = calDinner(dinner);
-                            lunchCosts = calLunch(lunch);
-                            breakfastCosts = calBreakfast(breakfast);
-                            totalCosts[0] = breakfastCosts[0] + lunchCosts[0] + dinnerCosts[0];
-                            totalCosts[1] = breakfastCosts[1] + lunchCosts[1] + dinnerCosts[1];
-                            run = 0;
-                        }
-                    }
+          printf("\nEnter amount for breakfast:");
+         scanf("%f", &breakfast);
+        printf("\nEnter amount for lunch:");
+         scanf("%f", &lunch);
+          printf("\nEnter amount for Dinner:");
+        scanf("%f", &dinner);
+       if (breakfast < 0 || lunch < 0 || dinner < 0)
+          {
+         printf("Invalid cost input!Try Again.");
+         continue;
+          }
+           else
+            {
+        dinnerCosts = calDinner(dinner);
+         lunchCosts = calLunch(lunch);
+          breakfastCosts = calBreakfast(breakfast);
+             totalCosts[0] = breakfastCosts[0] + lunchCosts[0] + dinnerCosts[0];
+        totalCosts[1] = breakfastCosts[1] + lunchCosts[1] + dinnerCosts[1];
+                      run = 0;
+                 }
+                  }
                 }
                 if (time[1] > 19)
                 {
                     run = 1;
                     while (run == 1)
                     {
-                        printf("\nEnter amount for breakfast:");
-                        scanf("%f", &breakfast);
-                        printf("\nEnter amount for lunch:");
-                        scanf("%f", &lunch);
-                        if (breakfast < 0 || lunch < 0)
-                        {
-                            printf("\nInvalid cost input!Try Again.");
-                            continue;
-                        }
-                        else
-                        {
-                            breakfastCosts = calBreakfast(breakfast);
-                            lunchCosts = calLunch(lunch);
-                            totalCosts[0] = breakfastCosts[0] + lunchCosts[0];
-                            totalCosts[1] = breakfastCosts[1] + lunchCosts[1];
-                            run = 0;
-                        }
-                    }
-                }
-            }
-            if (time[0] > 7 && time[0] < 12)
+         printf("\nEnter amount for breakfast:");
+         scanf("%f", &breakfast);
+            printf("\nEnter amount for lunch:");
+       scanf("%f", &lunch);
+         if (breakfast < 0 || lunch < 0)
             {
-                if (time[1] > 13 && time[1] < 19)
-                {
-                    run = 1;
-                    while (run == 1)
-                    {
-                        printf("\nEnter amount for lunch:");
-                        scanf("%f", &lunch);
-                        if (lunch < 0)
-                        {
-                            printf("\nInvalid cost input!Try Again.");
-                            continue;
-                        }
-                        else
-                        {
-                            lunchCosts = calLunch(lunch);
-                            totalCosts[0] = lunchCosts[0];
-                            totalCosts[1] = lunchCosts[1];
-                            run = 0;
-                        }
-                    }
-                }
+            printf("\nInvalid cost input!Try Again.");
+             continue;
+              }
                 else
-                {
-                    run = 1;
-                    while (run == 1)
-                    {
-                        printf("\nEnter amount for lunch:");
-                        scanf("%f", &lunch);
-                        printf("\nEnter amount for Dinner:");
-                        scanf("%f", &dinner);
-                        if (lunch < 0 || dinner < 0)
-                        {
-                            printf("\nInvalid cost input!Try Again.");
-                            continue;
-                        }
-                        else
-                        {
-                            dinnerCosts = calDinner(dinner);
-                            lunchCosts = calLunch(lunch);
-                            totalCosts[0] = dinnerCosts[0] + lunchCosts[0];
-                            totalCosts[1] = dinnerCosts[1] + lunchCosts[1];
-                            run = 0;
-                        }
-                    }
-                }
+               {
+      reakfastCosts = calBreakfast(breakfast);
+        lunchCosts = calLunch(lunch);
+             totalCosts[0] = breakfastCosts[0] + lunchCosts[0];
+          totalCosts[1] = breakfastCosts[1] + lunchCosts[1];
+                  run = 0;
+                 }
+              }
+          }
+        }
+          if (time[0] > 7 && time[0] < 12)
+         {
+             if (time[1] > 13 && time[1] < 19)
+              {
+              run = 1;
+                 while (run == 1)
+              {
+      rintf("\nEnter amount for lunch:");
+      canf("%f", &lunch);
+      if (lunch < 0)
+           {
+           printf("\nInvalid cost input!Try Again.");
+            continue;
             }
-            if (time[0] > 12 && time[0] < 18)
+           else
             {
-                run = 1;
-                while (run == 1)
-                {
-                    printf("\nEnter amount for Dinner:");
-                    scanf("%f", &dinner);
-                    if (dinner < 0)
-                    {
-                        printf("\nInvalid cost input!Try Again.");
-                        continue;
-                    }
-                    else
-                    {
-                        dinnerCosts = calDinner(dinner);
-                        totalCosts[0] = dinnerCosts[0];
-                        totalCosts[1] = dinnerCosts[1];
-                        run = 0;
+            lunchCosts = calLunch(lunch);
+         totalCosts[0] = lunchCosts[0];
+            totalCosts[1] = lunchCosts[1];
+           run = 0;
+               }
+            }
+             }
+               else
+               {
+                    run = 1;
+                 while (run == 1)
+           {
+        printf("\nEnter amount for lunch:");
+      scanf("%f", &lunch);
+      printf("\nEnter amount for Dinner:");
+       scanf("%f", &dinner);
+                if (lunch < 0 || dinner < 0)
+               {
+                      printf("\nInvalid cost input!Try Again.");
+                         continue;
+                      }
+                       else
+                      {
+      dinnerCosts = calDinner(dinner);
+       lunchCosts = calLunch(lunch);
+        totalCosts[0] = dinnerCosts[0] + lunchCosts[0];
+         totalCosts[1] = dinnerCosts[1] + lunchCosts[1];
+                           run = 0;
+             }
+         }
+            }
+         }
+         if (time[0] > 12 && time[0] < 18)
+         {
+            run = 1;
+          while (run == 1)
+           {
+          printf("\nEnter amount for Dinner:");
+          scanf("%f", &dinner);
+           if (dinner < 0)
+             {
+           printf("\nInvalid cost input!Try Again.");
+             continue;
+          }
+          else
+         {
+      dinnerCosts = calDinner(dinner);
+         totalCosts[0] = dinnerCosts[0];
+        totalCosts[1] = dinnerCosts[1];
+                       run = 0;
                     }
                 }
             }
@@ -265,13 +265,13 @@ float *calMealCost(int numOfDays, float time[2])
                 run = 1;
                 while (run == 1)
                 {
-                    printf("\nEnter amount for breakfast:");
-                    scanf("%f", &breakfast);
-                    printf("\nEnter amount for lunch:");
-                    scanf("%f", &lunch);
-                    printf("\nEnter amount for Dinner:");
-                    scanf("%f", &dinner);
-                    if (breakfast < 0 || lunch < 0 || dinner < 0)
+      printf("\nEnter amount for breakfast:");
+            scanf("%f", &breakfast);
+        printf("\nEnter amount for lunch:");
+        scanf("%f", &lunch);
+          printf("\nEnter amount for Dinner:");
+          scanf("%f", &dinner);
+        if (breakfast < 0 || lunch < 0 || dinner < 0)
                     {
                         printf("\nInvalid cost input!Try Again.");
                         continue;
@@ -292,21 +292,21 @@ float *calMealCost(int numOfDays, float time[2])
                 run = 1;
                 while (run == 1)
                 {
-                    printf("\nEnter amount for lunch:");
-                    scanf("%f", &lunch);
-                    printf("\nEnter amount for Dinner:");
-                    scanf("%f", &dinner);
-                    if (lunch < 0 || dinner < 0)
-                    {
-                        printf("\nInvalid cost input!Try Again.");
-                        continue;
+        printf("\nEnter amount for lunch:");
+        scanf("%f", &lunch);
+         printf("\nEnter amount for Dinner:");
+         scanf("%f", &dinner);
+        if (lunch < 0 || dinner < 0)
+       {
+           printf("\nInvalid cost input!Try Again.");
+          continue;
                     }
                     else
                     {
-                        dinnerCosts = calDinner(dinner);
-                        lunchCosts = calLunch(lunch);
-                        totalCosts[0] = dinnerCosts[0] + lunchCosts[0];
-                        totalCosts[1] = dinnerCosts[1] + lunchCosts[1];
+           dinnerCosts = calDinner(dinner);
+           lunchCosts = calLunch(lunch);
+           totalCosts[0] = dinnerCosts[0] + lunchCosts[0];
+           totalCosts[1] = dinnerCosts[1] + lunchCosts[1];
                         run = 0;
                     }
                 }
@@ -320,15 +320,15 @@ float *calMealCost(int numOfDays, float time[2])
                     scanf("%f", &dinner);
                     if (dinner < 0)
                     {
-                        printf("\nInvalid cost input!Try Again.");
-                        continue;
+                    printf("\nInvalid cost input!Try Again.");
+                    continue;
                     }
                     else
                     {
-                        dinnerCosts = calDinner(dinner);
-                        totalCosts[0] = dinnerCosts[0];
-                        totalCosts[1] = dinnerCosts[1];
-                        run = 0;
+          dinnerCosts = calDinner(dinner);
+              totalCosts[0] = dinnerCosts[0];
+             totalCosts[1] = dinnerCosts[1];
+                run = 0;
                     }
                 }
             }
@@ -342,96 +342,96 @@ float *calMealCost(int numOfDays, float time[2])
             scanf("%f", &breakfast);
             printf("\nEnter amount for lunch:");
             scanf("%f", &lunch);
-            printf("\nEnter amount for Dinner:");
+         printf("\nEnter amount for Dinner:");
             scanf("%f", &dinner);
             if (breakfast < 0 || lunch < 0 || dinner < 0)
             {
-                printf("\nInvalid cost input!Try Again.");
-                continue;
+           printf("\nInvalid cost input!Try Again.");
+          continue;
             }
             else
             {
-                dinnerCosts = calDinner(dinner);
-                lunchCosts = calLunch(lunch);
-                breakfastCosts = calBreakfast(breakfast);
-                totalCosts[0] = breakfastCosts[0] + lunchCosts[0] + dinnerCosts[0];
-                totalCosts[1] = breakfastCosts[1] + lunchCosts[1] + dinnerCosts[1];
-                run = 0;
+           dinnerCosts = calDinner(dinner);
+          lunchCosts = calLunch(lunch);
+           breakfastCosts = calBreakfast(breakfast);
+          totalCosts[0] = breakfastCosts[0] + lunchCosts[0] + dinnerCosts[0];
+           totalCosts[1] = breakfastCosts[1] + lunchCosts[1] + dinnerCosts[1];
+          run = 0;
             }
         }
         break;
     case 3:
         if (noOfDays > 1)
         {
-            if (time[1] > 8 && time[1] <= 13)
+        if (time[1] > 8 && time[1] <= 13)
+           {
+           run = 1;
+            while (run == 1)
+           {
+             printf("\nEnter amount for breakfast:");
+           scanf("%f", &breakfast);
+           if (breakfast < 0)
             {
-                run = 1;
-                while (run == 1)
-                {
-                    printf("\nEnter amount for breakfast:");
-                    scanf("%f", &breakfast);
-                    if (breakfast < 0)
-                    {
-                        printf("\nInvalid cost input!Try Again.");
-                        continue;
-                    }
+             printf("\nInvalid cost input!Try Again.");
+              continue;
+            }
                     else
-                    {
-                        breakfastCosts = calBreakfast(breakfast);
-                        totalCosts[0] = breakfastCosts[0];
-                        totalCosts[1] = breakfastCosts[1];
-                        run = 0;
+              {
+             breakfastCosts = calBreakfast(breakfast);
+           totalCosts[0] = breakfastCosts[0];
+            totalCosts[1] = breakfastCosts[1];
+              run = 0;
                     }
                 }
             }
             if (time[1] > 13 && time[1] <= 19)
             {
-                run = 1;
-                while (run == 1)
-                {
-                    printf("\nEnter amount for breakfast:");
-                    scanf("%f", &breakfast);
-                    printf("\nEnter amount for lunch:");
-                    scanf("%f", &lunch);
-                    if (breakfast < 0 || lunch < 0)
-                    {
-                        printf("\nInvalid cost input!Try Again.");
-                        continue;
-                    }
-                    else
-                    {
-                        lunchCosts = calLunch(lunch);
-                        breakfastCosts = calBreakfast(breakfast);
-                        totalCosts[0] = breakfastCosts[0] + lunchCosts[0];
-                        totalCosts[1] = breakfastCosts[1] + lunchCosts[1];
-                        run = 0;
-                    }
-                }
+           run = 1;
+           while (run == 1)
+           {
+            printf("\nEnter amount for breakfast:");
+           scanf("%f", &breakfast);
+           printf("\nEnter amount for lunch:");
+          scanf("%f", &lunch);
+            if (breakfast < 0 || lunch < 0)
+           {
+           printf("\nInvalid cost input!Try Again.");
+            continue;
             }
-            if (time[1] > 19)
-            {
-                run = 1;
-                while (run == 1)
-                {
-                    printf("\nEnter amount for breakfast:");
-                    scanf("%f", &breakfast);
-                    printf("\nEnter amount for lunch:");
-                    scanf("%f", &lunch);
-                    printf("\nEnter amount for Dinner:");
-                    scanf("%f", &dinner);
+          else
+        {
+         lunchCosts = calLunch(lunch);
+           breakfastCosts = calBreakfast(breakfast);
+            totalCosts[0] = breakfastCosts[0] + lunchCosts[0];
+             totalCosts[1] = breakfastCosts[1] + lunchCosts[1];
+            run = 0;
+          }
+         }
+         }
+        if (time[1] > 19)
+        {
+          run = 1;
+           while (run == 1)
+         {
+          printf("\nEnter amount for breakfast:");
+          scanf("%f", &breakfast);
+          printf("\nEnter amount for lunch:");
+          scanf("%f", &lunch);
+          printf("\nEnter amount for Dinner:");
+          scanf("%f", &dinner);
                     if (breakfast < 0 || lunch < 0 || dinner < 0)
                     {
-                        printf("\nInvalid cost input!Try Again.");
+                    printf("\nInvalid cost input!Try Again.");
                         continue;
                     }
                     else
                     {
-                        dinnerCosts = calDinner(dinner);
-                        lunchCosts = calLunch(lunch);
-                        breakfastCosts = calBreakfast(breakfast);
-                        totalCosts[0] = breakfastCosts[0] + lunchCosts[0] + dinnerCosts[0];
-                        totalCosts[1] = breakfastCosts[1] + lunchCosts[1] + dinnerCosts[1];
-                        run = 0;
+                     dinnerCosts = calDinner(dinner)
+                       lunchCosts = calLunch(lunch);
+                    breakfastCosts = calBreakfast(breakfast);
+                    totalCosts[0] = breakfastCosts[0] + lunchCosts[0] + dinnerCosts[0];
+                  totalCosts[1] = breakfastCosts[1] + lunchCosts[1] + dinnerCosts[1];
+                     run = 0;
                     }
                 }
             }
@@ -441,6 +441,6 @@ float *calMealCost(int numOfDays, float time[2])
         printf("\nInvalid choice!Try again!");
         break;
     }
-    return totalCosts;
+ return totalCosts;
 }
 // --------
