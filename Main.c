@@ -82,6 +82,7 @@ int main()
             scanf("%lf", &airFare);
         }
     }while(airFare<minTime);
+    airCalc(airFare);
     
     printf("Did you rent any car?(y or n):");
     scanf("%s", carRental);
@@ -96,6 +97,7 @@ int main()
                 scanf("%d", &miles);
             }
         }while(miles<minTime);
+        mileCalc(miles) // calculate miles *.27
     }
     else{
         printf("No car was rented");
@@ -109,6 +111,7 @@ int main()
             scanf("%lf", &parkingFees);
         }
     }while(parkingFees<minTime);
+    parkCalc(parkingFees);
     
     printf("Amount of days you used the parking: ");
     scanf("%d", &parkingDays);
@@ -119,6 +122,7 @@ int main()
             scanf("%d", &parkingDays);
         }
     }while(parkingDays<minTime);
+    calcPD(parkingDays);
     
     printf("Did you use the taxi(y or n):");
     scanf("%s", taxiUse);
@@ -133,6 +137,7 @@ int main()
                 scanf("%lf", &taxiFee);
             }
         }while(taxiUse<minTime);
+        calTaxFee(taxiFee);
     }
     else{
         printf("No taxi was used");
@@ -164,6 +169,7 @@ int main()
             scanf("%lf", &hotelFee);
         }
     }while(hotelFee<minTime);
+    conSeeCalc(confSemFees);
     
     return 0;
 }
