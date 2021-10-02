@@ -11,7 +11,7 @@ int calculateMiles() {// $0.27 per mile driven
 
 // Calculate Parking Fees
 int calculateParkingFees() {// company PARKING_COVERED_PER_DAY = 6
-    parkingFees = (parkingFees - PARKING_COVERED_PER_DAY) * daysParking;
+    parkingFees = (parkingFees - PARKING_COVERED_PER_DAY);
     if(parkingFees < 0) {
         parkingFees = 0;
     }
@@ -20,7 +20,7 @@ int calculateParkingFees() {// company PARKING_COVERED_PER_DAY = 6
 
 // Calculate Taxi Fees
 int calculateTaxiFees() {// company TAXI_COVERED_PER_DAY = 10
-    taxi = (taxi - TAXI_COVERED_PER_DAY) * taxiDays;
+    taxi = (taxi - TAXI_COVERED_PER_DAY);
     if(taxi < 0) {
         taxi = 0;
     }
@@ -29,8 +29,7 @@ int calculateTaxiFees() {// company TAXI_COVERED_PER_DAY = 10
 
 // Calculate Hotel Fees
 int calculateHotelFees() {// company HOTEL_COVERED_PER_NIGHT = 90
-    hotelFee = (hotelFee - HOTEL_COVERED_PER_NIGHT) * (
-        days - 1);
+    hotelFee = (hotelFee - HOTEL_COVERED_PER_NIGHT);
     if(hotelFee < 0) {
         hotelFee = 0;
     }
