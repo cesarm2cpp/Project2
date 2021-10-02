@@ -37,7 +37,7 @@ int main()
     scanf("%lf", &airFare);
     printf("Did you rent any car?(y or n):");
     scanf("%s", carRental);
-    if(carRental == "y")
+    if(carRental, "y")
     {
         printf("How many miles did you drive in your private vehicle:" );
         scanf("%d", &miles);
@@ -45,13 +45,13 @@ int main()
     else{
         printf("No car was rented");
     }
-    printf("Parking fees during trip: ");
+    printf("\nParking fees during trip: ");
     scanf("%lf", &parkingFees);
     printf("Amount of days you used the parking: ");
     scanf("%d", &parkingDays);
     printf("Did you use the taxi(y or n):");
     scanf("%s", taxiUse);
-    if(taxiUse == "y")
+    if(taxiUse, "y")
     {
         printf("Taxi fees: ");
         scanf("%lf", &taxiFee);
@@ -59,7 +59,7 @@ int main()
     else{
         printf("No taxi was used");
     }
-    printf("Amount of days used on taxi:");
+    printf("\nAmount of days used on taxi:");
     scanf("%d", &taxiDays);
     printf("Conference or seminar registration fees:");
     scanf("%lf", &confSemFees);
