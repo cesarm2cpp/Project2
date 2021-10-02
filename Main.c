@@ -7,8 +7,10 @@ int main()
     double arrivalTime;
     double departTime;
     double airFare;
+    double carRental;
+    double privateCar;
     double milesDriven;
-    int registrationFee;
+    double registrationFee;
 
     // fees that are partly covered by company
     double parkingFees;
