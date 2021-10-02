@@ -39,8 +39,26 @@ int main()
     }while(totalDays<minTime);
     
     printf("Enter departure time (0..24 military time):");
-    scanf("%lf", &arrivalTime);
+    scanf("%lf", &departTime);
     do{
+        if(departTime < minTime){
+            printf("\nTime can't be negative");
+            printf("\nEnter departure time (0..24 military time):");
+            scanf("%lf", &departTime);
+        }
+        if(departTime > maxTime)
+        {
+            printf("\nThat time does not exist");
+            printf("\nEnter departure time (0..24 military time):");
+            scanf("%lf", &departTime);
+        }
+    }
+    while(departTime > maxTime || departTime < minTime);
+    depFood(departTime);
+    
+    printf("\nEnter arrival time (0..24 military time):");
+    scanf("%lf", &arrivalTime);
+        do{
         if(arrivalTime < minTime){
             printf("\nTime can't be negative");
             printf("\nEnter departure time (0..24 military time):");
@@ -54,23 +72,7 @@ int main()
         }
     }
     while(arrivalTime > maxTime || arrivalTime < minTime);
-    
-    printf("\nEnter arrival time (0..24 military time):");
-    scanf("%lf", &departTime);
-        do{
-        if(arrivalTime < minTime){
-            printf("\nTime can't be negative");
-            printf("\nEnter departure time (0..24 military time):");
-            scanf("%lf", &departTime);
-        }
-        if(arrivalTime > maxTime)
-        {
-            printf("\nThat time does not exist");
-            printf("\nEnter departure time (0..24 military time):");
-            scanf("%lf", &departTime);
-        }
-    }
-    while(departTime > maxTime || departTime < minTime);
+    arrFood(arrivalTime);
 
     printf("Amount of the round trip airfare: ");
     scanf("%lf", &airFare);
