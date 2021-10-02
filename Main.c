@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "Tools.h"
+#include "calculations.h"
 
 int main()
 {
