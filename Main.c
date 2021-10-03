@@ -176,7 +176,7 @@ int main()
         }
     }while(hotelFee<minTime);
 
-    writeCalculations(miles, parkingFees, parkingDays, taxiUse, taxiFee, taxiDays, hotelFee, totalDays);
+    writeCalculations(miles, parkingFees, parkingDays, carRental, taxiUse, taxiFee, taxiDays, hotelFee, totalDays);
     
     return 0;
 }
