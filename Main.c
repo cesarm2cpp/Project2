@@ -184,6 +184,35 @@ int main()
             scanf("%lf", &hotelFee);
         }
     }while(hotelFee<minTime);
+    
+    
+    printf("\nTOTAl EXPENSES LIST");
+    printf("\n--------------------------");
+    printf("\nTrip:$%lf", airFare);
+    printf("\nRental:$");
+    printf("\nMileage:$");
+    printf("\nParking:$");
+    printf("\nTaxi:$");
+    printf("\nConference:$");
+    printf("\nHotels:$");
+    printf("\nMeals:$");
+    printf("\nTotal Expenses:$\n");
 
+    printf("\nTOTAL ALLOWABLE EXPENSES");
+    printf("\n--------------------------");
+    printf("\nTrip:$");
+    printf("\nRental:$");
+    printf("\nMileage:$");
+    printf("\nParking:$");
+    printf("\nTaxi:$");
+    printf("\nConference:$");
+    printf("\nHotels:$");
+    printf("\nMeals:$");
+    printf("\nTotal allowable Expenses:$\n");
+
+    printf("\nTOTAL SAVINGS");
+    printf("\n--------------------------");
+    printf("\nSavings:$");
+    
     return 0;
 }
