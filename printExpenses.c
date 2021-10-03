@@ -25,7 +25,7 @@ printf("\nConference:$");
 printf("\nHotels:$");
 printf("\nMeals:$\n");
 
-printf("\nTotal Expenses:$");
+printf("\nTOTAL EXPENSES:$");
 printf("\n--------------");
 printf("\nSavings:$");
 printf("\nTOTAL SAVINGS");
