@@ -2,7 +2,7 @@
 #include "Tools.h"
 #include "calculate.c"
 
-int writeCalculations(int miles, double parkingFees, int parkingDays, char taxiUse[10], double taxiFee, int taxiDays, double hotelFee, int totalDays) {
+int writeCalculations(int miles, double parkingFees, int parkingDays, char taxiUse[10], double taxiFee, int taxiDays, double hotelFee, int totalDays, double privateCar,double carRental) {
     printf("Miles Fees: %d\n", calculateMiles(miles));
     printf("Parking Fees: %d\n", calculateParkingFees(parkingFees, parkingDays));
     if(taxiUse, 'y') {
@@ -35,7 +35,8 @@ int main()
     double hotelFee;
     int hotelDays;  // can be different from totalDays Ex: we can go 4 days and 3 nights
     char carRental[10];
-    char taxiUse[10]; 
+    char taxiUse[10];
+    char privateC[10];
     double minTime = 0.0; //min number is 1
     double maxTime = 24.0; //max number is 10
     
@@ -193,7 +194,7 @@ int main()
         }
     }while(hotelFee<minTime);
 
-    writeCalculations(miles, parkingFees, parkingDays, carRental, taxiUse, taxiFee, taxiDays, hotelFee, totalDays);
+    writeCalculations(miles, parkingFees, parkingDays,privateCar, carRental, taxiUse, taxiFee, taxiDays, hotelFee, totalDays);
     
     return 0;
 }
