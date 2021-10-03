@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "Tools.h"
-#include "calculations.h"
+#include "calculate.c"
 
 int main()
 {
@@ -25,6 +24,7 @@ int main()
     int hotelDays;  // can be different from totalDays Ex: we can go 4 days and 3 nights
     char carRental[10];
     char taxiUse[10];
+    char privateC[10];
     double minTime = 0.0; //min number is 1
     double maxTime = 24.0; //max number is 10
     
@@ -38,27 +38,11 @@ int main()
         }
     }while(totalDays<minTime);
     
-    printf("Enter departure time (0..24 military time):");
-    scanf("%lf", &departTime);
-    do{
-        if(departTime < minTime){
-            printf("\nTime can't be negative");
-            printf("\nEnter departure time (0..24 military time):");
-            scanf("%lf", &departTime);
-        }
-        if(departTime > maxTime)
-        {
-            printf("\nThat time does not exist");
-            printf("\nEnter departure time (0..24 military time):");
-            scanf("%lf", &departTime);
-        }
-    }
-    while(departTime > maxTime || departTime < minTime);
-    depFood(departTime);
     
-    printf("\nEnter arrival time (0..24 military time):");
+    
+    printf("Enter departure time (0..24 military time):");
     scanf("%lf", &arrivalTime);
-        do{
+    do{
         if(arrivalTime < minTime){
             printf("\nTime can't be negative");
             printf("\nEnter departure time (0..24 military time):");
@@ -72,7 +56,23 @@ int main()
         }
     }
     while(arrivalTime > maxTime || arrivalTime < minTime);
-    arrFood(arrivalTime);
+    
+    printf("\nEnter arrival time (0..24 military time):");
+    scanf("%lf", &departTime);
+        do{
+        if(arrivalTime < minTime){
+            printf("\nTime can't be negative");
+            printf("\nEnter departure time (0..24 military time):");
+            scanf("%lf", &departTime);
+        }
+        if(arrivalTime > maxTime)
+        {
+            printf("\nThat time does not exist");
+            printf("\nEnter departure time (0..24 military time):");
+            scanf("%lf", &departTime);
+        }
+    }
+    while(departTime > maxTime || departTime < minTime);
 
     printf("Amount of the round trip airfare: ");
     scanf("%lf", &airFare);
@@ -84,13 +84,12 @@ int main()
             scanf("%lf", &airFare);
         }
     }while(airFare<minTime);
-    airCalc(airFare);
     
     printf("Did you rent any car?(y or n):");
     scanf("%s", carRental);
     if(carRental, "y")
     {
-        printf("How many miles did you drive in your private vehicle:" );
+        printf("How much was the car you had rented?:" );
         scanf("%d", &miles);
         do{
             if(miles<minTime){
@@ -99,11 +98,27 @@ int main()
                 scanf("%d", &miles);
             }
         }while(miles<minTime);
-        mileCalc(miles) // calculate miles *.27
     }
     else{
         printf("No car was rented");
     }
+    
+    printf("\nDid you use your private car?");
+    scanf("%s", privateC);
+    if(privateC, "y"){
+        printf("How many miles did you drive in your private vehicle? ");        
+        scanf("%lf", &privateCar);
+        do{
+            if(privateCar<minTime){
+                printf("\nNo such thing as negative mile!");
+                printf("\nHow many miles did you drive in your private vehicle:" );
+                scanf("%d", &miles);
+            }
+        }while(privateCar<minTime);
+    }else{
+        printf("\nDid not use private car");
+    }
+    
     printf("\nParking fees during trip: ");
     scanf("%lf", &parkingFees);
     do{
@@ -113,7 +128,6 @@ int main()
             scanf("%lf", &parkingFees);
         }
     }while(parkingFees<minTime);
-    parkCalc(parkingFees);
     
     printf("Amount of days you used the parking: ");
     scanf("%d", &parkingDays);
@@ -124,7 +138,6 @@ int main()
             scanf("%d", &parkingDays);
         }
     }while(parkingDays<minTime);
-    calcPD(parkingDays);
     
     printf("Did you use the taxi(y or n):");
     scanf("%s", taxiUse);
@@ -133,13 +146,12 @@ int main()
         printf("Taxi fees: ");
         scanf("%lf", &taxiFee);
         do{
-            if(taxiUse<minTime){
+            if(taxiFee<minTime){// taxiUse -> taxiFee
                 printf("\nFees are not negative");
                 printf("\nTaxi fees: ");
                 scanf("%lf", &taxiFee);
             }
-        }while(taxiUse<minTime);
-        calTaxFee(taxiFee);
+        }while(taxiFee<minTime);// taxiUse -> taxiFee
     }
     else{
         printf("No taxi was used");
@@ -171,8 +183,6 @@ int main()
             scanf("%lf", &hotelFee);
         }
     }while(hotelFee<minTime);
-    conSeeCalc(confSemFees);
-    
+
     return 0;
 }
-
