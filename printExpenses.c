@@ -3,12 +3,12 @@ printf("--------------");
 printf("Trip:$");
 printf("Rental:$");
 printf("Mileage:$");
-printf("Parking:$")
-printf("Taxi:$")
-printf("Conference:$")
-printf("Hotels:$")
-printf("Meals:$")
-printf("Total Expenses:$")
+printf("Parking:$");
+printf("Taxi:$");
+printf("Conference:$");
+printf("Hotels:$");
+printf("Meals:$");
+printf("Total Expenses:$");
 
 printf("TOTAL ALLOWABLE EXPENSES");
 printf("--------------");
