@@ -98,7 +98,7 @@ int main()
     scanf("%s", carRental);
     if(carRental, "y")
     {
-        printf("How many miles did you drive in your private vehicle:" );
+        printf("How much was the car you had rented?:" );
         scanf("%d", &miles);
         do{
             if(miles<minTime){
@@ -111,6 +111,23 @@ int main()
     else{
         printf("No car was rented");
     }
+    
+    printf("\nDid you use your private car?)
+    scanf("%s", privateC);
+    if(privateC, "y"){
+        printf("How many miles did you drive in your private vehicle? "):
+        scanf("%d", &privateCar);
+        do{
+            if(privateCar<minTime){
+                printf("\nNo such thing as negative mile!");
+                printf("\nHow many miles did you drive in your private vehicle:" );
+                scanf("%d", &miles);
+            }
+        }while(privateCar<minTime);
+    }else{
+        printf("\nDid not use private car");
+    }
+    
     printf("\nParking fees during trip: ");
     scanf("%lf", &parkingFees);
     do{
