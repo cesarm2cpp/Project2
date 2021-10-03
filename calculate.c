@@ -32,14 +32,14 @@ int calculateTaxiFees(char taxiUse[10], double taxiFee, int taxiDays) {// compan
     return taxiFee;
 }
 
-// // Calculate Hotel Fees
-// int calculateHotelFees(double hotelFee) {// company HOTEL_COVERED_PER_NIGHT = 90
-//     hotelFee = (hotelFee - HOTEL_COVERED_PER_NIGHT);
-//     if(hotelFee < 0) {
-//         hotelFee = 0;
-//     }
-//     return hotelFee;
-// }
+// Calculate Hotel Fees
+int calculateHotelFees(double hotelFee, int totalDays) {// company HOTEL_COVERED_PER_NIGHT = 90
+    hotelFee = hotelFee - (HOTEL_COVERED_PER_NIGHT * (totalDays - 1));
+    if(hotelFee < 0) {
+        hotelFee = 0;
+    }
+    return hotelFee;
+}
 
 // // Calculate Breakfast
 // int calculateBreakfast(double departTime, double arrivalTime, int totalDays) {// company BREAKFAST_COVERED = 9
