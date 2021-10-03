@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "calculate.c"
+#include "calculate.h"
 
 int main()
 {
@@ -37,7 +37,7 @@ int main()
             scanf("%d", &totalDays);
         }
     }while(totalDays<minTime);
-    
+    calcTrip(totalDays);
     
     
     printf("Enter departure time (0..24 military time):");
@@ -84,6 +84,7 @@ int main()
             scanf("%lf", &airFare);
         }
     }while(airFare<minTime);
+    air(airFare);
     
     printf("Did you rent any car?(y or n):");
     scanf("%s", carRental);
