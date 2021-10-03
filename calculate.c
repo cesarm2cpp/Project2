@@ -41,6 +41,10 @@ int calculateHotelFees(double hotelFee, int totalDays) {// company HOTEL_COVERED
     return hotelFee;
 }
 
+int pc(int privateCar){
+  double pcPrice = privateCar * .27;
+  return pcPrice;
+}
 // // Calculate Breakfast
 // int calculateBreakfast(double departTime, double arrivalTime, int totalDays) {// company BREAKFAST_COVERED = 9
 //     /* On first day, breakfast is allowed if the time of departure is before 7am. On the last day, breakfast is allowed if arrival is after 8am. */
