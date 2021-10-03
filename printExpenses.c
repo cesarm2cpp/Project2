@@ -10,7 +10,7 @@ printf("Hotels:$");
 printf("Meals:$");
 printf("Total Expenses:$");
 
-printf("TOTAL ALLOWABLE EXPENSES");
+printf("\nTOTAL ALLOWABLE EXPENSES");
 printf("--------------");
 printf("Trip:$");
 printf("Rental:$");
@@ -22,6 +22,6 @@ printf("Hotels:$");
 printf("Meals:$");
 printf("Total Expenses:$");
 
-printf("TOTAL SAVINGS");
+printf("\nTOTAL SAVINGS");
 printf("--------------");
 printf("Savings:$");
