@@ -3,7 +3,7 @@
 int main()
 {
 printf("\nTOTAl EXPENSES LIST");
-printf("\n--------------");
+printf("\n--------------------------");
 printf("\nTrip:$");
 printf("\nRental:$");
 printf("\nMileage:$");
@@ -15,7 +15,7 @@ printf("\nMeals:$");
 printf("\nTotal Expenses:$\n");
 
 printf("\nTOTAL ALLOWABLE EXPENSES");
-printf("\n--------------");
+printf("\n--------------------------");
 printf("\nTrip:$");
 printf("\nRental:$");
 printf("\nMileage:$");
@@ -23,14 +23,12 @@ printf("\nParking:$");
 printf("\nTaxi:$");
 printf("\nConference:$");
 printf("\nHotels:$");
-printf("\nMeals:$\n");
+printf("\nMeals:$");
+printf("\nTotal allowable Expenses:$\n");
 
-printf("\nTOTAL EXPENSES:$");
-printf("\n--------------");
-printf("\nSavings:$");
 printf("\nTOTAL SAVINGS");
-printf("--------------");
-printf("Savings:$");
+printf("\n--------------------------");
+printf("\nSavings:$");
 
 
     return 0;
