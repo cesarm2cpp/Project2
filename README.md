@@ -3,10 +3,13 @@
 ## Team members 🤘
 | Name        | Task |
 | ------      | ----------- |
-| Van Huynh   | Implement functions in main.c and calculate.c
-| Cesar Martinez| Implement main.c 
-| Abigail Pinkus| calculate.c and calculate.h, debug, test calculation
-| Keon Joong Kim| ............
+| Van Huynh   | Implement functions in Main.c and 2 tool files
+|             | Help teammates debugs all files, optimize code, set up built structure
+| Cesar Martinez| Implement Main.c 
+|               | Help teammates debug calculate.c and calculate.h, optimize code
+| Abigail Pinkus| Implement calculate.c and calculate.h files
+|               | Debug calculation files and optimize user inputs functions
+| Keon Joong Kim| ...
 
 
 ## Build Structure
@@ -41,3 +44,6 @@
 - calculate employees' excess expense that need reimbursment
 - calculate employees' saved amount when the expenses were under the total allowed
 - display all results
+
+### Some challenges in the process
+> Abigail, "I did the created a branch and created the calculate.c file and calculate.h file where I calculated the mile fees, parking fees, taxi fees, hotel fees, and meal fees with breakfast lunch and dinner. the meal fees was not working however because the depart and arrival times where == 0 in the in the calc file. I also did debugging on my branch to make sure everything worked on my end on its own."
