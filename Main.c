@@ -117,7 +117,7 @@ int main()
         printf("\nDid not use private car");
         privateValue = 0.0;
     }
-    
+    if(rentalPrice || privateCar != 0){
     printf("\nParking fees during trip: ");
     scanf("%lf", &parkingFees);
     do{
@@ -137,6 +137,7 @@ int main()
             }while(parkingDays<minTime);
         }
     }while(parkingFees<minTime);
+    }
     
     printf("\nDid you use the taxi(y or n):");
     scanf("%s", taxiUse);
