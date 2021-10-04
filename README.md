@@ -5,7 +5,7 @@
 | ------      | ----------- |
 | Van Huynh   | Implement functions in main.c and calculate.c
 | Cesar Martinez| Implement main.c 
-| Abigail Pinkus| calculate.c and calculate.h
+| Abigail Pinkus| calculate.c and calculate.h, debug, test calculation
 | Keon Joong Kim| ............
 
 
