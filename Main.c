@@ -48,7 +48,7 @@ int main()
     }while(totalDays<minTime);
     
     
-    printf("Enter departure time (0..24 military time):");
+    printf("\nEnter departure time (0..24 military time):");
     scanf("%lf", &departTime);
     do{
         if(departTime < minTime){
@@ -82,7 +82,7 @@ int main()
     }
     while(arrivalTime > maxTime || arrivalTime < minTime);
 
-    printf("Amount of the round trip airfare: ");
+    printf("\nAmount of the round trip airfare: ");
     scanf("%lf", &airFare);
     do{
         if(airFare < minTime)
@@ -108,14 +108,14 @@ int main()
             }
         }while(rentalPrice<minTime);
     }else{
-        printf("No car was rented");
+        printf("\nNo car was rented");
         rentalPrice = 0.0;
     }
     
     printf("\nDid you use your private car?");
     scanf("%s", privateC);
     if(privateC, "y"){
-        printf("How many miles did you drive in your private vehicle? ");        
+        printf("\nHow many miles did you drive in your private vehicle? ");        
         scanf("%lf", &privateCar);
         do{
             if(privateCar<minTime){
@@ -126,7 +126,7 @@ int main()
         }while(privateCar<minTime);
         privateValue = carMileage(privateCar);
     }else{
-        printf("\nDid not use private car");
+        printf("\nDid not use private car(y or n):");
         privateValue = 0.0;
     }
     
@@ -140,7 +140,7 @@ int main()
         }
     }while(parkingFees<minTime);
     
-    printf("Amount of days you used the parking: ");
+    printf("\nAmount of days you used the parking: ");
     scanf("%d", &parkingDays);
     do{
         if(parkingDays<minTime){
@@ -150,11 +150,11 @@ int main()
         }
     }while(parkingDays<minTime);
     
-    printf("Did you use the taxi(y or n):");
+    printf("\nDid you use the taxi(y or n):");
     scanf("%s", taxiUse);
     if(taxiUse, "y")
     {
-        printf("Taxi fees: ");
+        printf("\nTaxi fees: ");
         scanf("%lf", &taxiFee);
         do{
             if(taxiFee<minTime){// taxiUse -> taxiFee
@@ -165,7 +165,7 @@ int main()
         }while(taxiFee<minTime);// taxiUse -> taxiFee
     }
     else{
-        printf("No taxi was used");
+        printf("\nNo taxi was used");
     }
     printf("\nAmount of days used on taxi:");
     scanf("%d", &taxiDays);
@@ -176,7 +176,7 @@ int main()
         }
     }while(taxiDays<minTime);
     taxiFee = tax(taxiFee, taxiDays);
-    printf("Conference or seminar registration fees:");
+    printf("\nConference or seminar registration fees:");
     scanf("%lf", &confSemFees);
     do{
         if(confSemFees<minTime){
@@ -185,7 +185,7 @@ int main()
             scanf("%lf", &confSemFees);
         }
     }while(confSemFees<minTime);
-    printf("Any hotel expenses:");
+    printf("\nAny hotel expenses:");
     scanf("%lf", &hotelFee);
     do{
         if(hotelFee<minTime){
@@ -196,11 +196,11 @@ int main()
     }while(hotelFee<minTime);
     hotelFee = hotel(hotelFee, totalDays);
     
-    printf("Amount spent on breakfast:");
+    printf("\nAmount spent on breakfast:");
     scanf("%lf", &breakfast);
-    printf("Amount spent on lunch:");
+    printf("\nAmount spent on lunch:");
     scanf("%lf", &lunch);
-    printf("Amount spent on dinner:");
+    printf("\nAmount spent on dinner:");
     scanf("%lf", &dinner);
     totalFood = breakfast + lunch + dinner;
     calcPark = calcParking(parkingFees, parkingDays);
@@ -210,7 +210,7 @@ int main()
     double defaultHotel = 90 * totalDays;
     double temp = Totaltemp(airFare, rentalPrice, privateValue, confSemFees);
     double TotalAllow = temp + defaultPark + defaultHotel + 37;
-    
+    printf("\n--------------------------");
     printf("\nTOTAl EXPENSES LIST");
     printf("\n--------------------------");
     printf("\nTrip:$%lf", airFare);
@@ -224,7 +224,7 @@ int main()
     printf("\nLunch:$%lf", lch(lunch, arrivalTime, departTime));
     printf("\nDinner:$%lf",dr(dinner, arrivalTime, departTime));
     printf("\nTotal Expenses:$%lf", TotalOverall);
-    
+    printf("\n--------------------------");
     printf("\nTOTAL ALLOWABLE EXPENSES");
     printf("\n--------------------------");
     printf("\nTrip:$%lf", airFare);
@@ -238,8 +238,10 @@ int main()
     printf("\nLunch:$12");
     printf("\nDinner:$16");
     printf("\nTotal allowable Expenses:$%lf", TotalAllow);
-    
-    double valueCheck = TotalOverall - TotalAllow;
+    printf("\n--------------------------");
+    printf("\nResult of trip");
+    printf("\n--------------------------");
+    double valueCheck = (TotalOverall - TotalAllow);
     if(valueCheck > 0){
         printf("\nYou owe the company:$%lf",valueCheck);
     }
