@@ -70,13 +70,13 @@ int main()
     }
     while(arrivalTime > maxTime || arrivalTime < minTime);
 
-    printf("\nAmount of the round trip airfare: ");
+    printf("\nAmount of the round trip airfare:$");
     scanf("%lf", &airFare);
     do{
         if(airFare < minTime)
         {
             printf("\nMoney is never negative");
-            printf("\nAmount of the round trip airfare: ");
+            printf("\nAmount of the round trip airfare:$");
             scanf("%lf", &airFare);
         }
     }while(airFare<minTime);
@@ -86,12 +86,12 @@ int main()
     scanf("%s", carRental);
     if(strcmp(carRental, "y")==0)
     {
-        printf("\nHow much was the car you had rented?:" );
+        printf("\nHow much was the car you had rented?:$" );
         scanf("%lf", &rentalPrice);
         do{
             if(rentalPrice<minTime){
                 printf("\nNo such thing as negative money!");
-                printf("\nHow much was the car you had rented?:" );
+                printf("\nHow much was the car you had rented?:$" );
                 scanf("%lf", &rentalPrice);
             }
         }while(rentalPrice<minTime);
@@ -118,12 +118,12 @@ int main()
         privateValue = 0.0;
     }
     if(rentalPrice || privateCar != 0){
-    printf("\nParking fees during trip: ");
+    printf("\nParking fees during trip:$");
     scanf("%lf", &parkingFees);
     do{
         if(parkingFees<minTime){
             printf("\nMoney is never negative");
-            printf("\nParking fees during trip: ");
+            printf("\nParking fees during trip:$");
             scanf("%lf", &parkingFees);
         }
         else if(parkingFees > minTime){
@@ -142,12 +142,12 @@ int main()
     printf("\nDid you use the taxi(y or n):");
     scanf("%s", taxiUse);
     if(strcmp(taxiUse, "y")==0){
-        printf("\nTaxi fees: ");
+        printf("\nTaxi fees:$");
         scanf("%lf", &taxiFee);
         do{
             if(taxiFee<minTime){// taxiUse -> taxiFee
                 printf("\nFees are not negative");
-                printf("\nTaxi fees: ");
+                printf("\nTaxi fees:$");
                 scanf("%lf", &taxiFee);
             }
             else if(taxiFee > minTime){
@@ -167,32 +167,51 @@ int main()
         printf("\nNo taxi was used");
     }
 
-    printf("\nConference or seminar registration fees:");
+    printf("\nConference or seminar registration fees:$");
     scanf("%lf", &confSemFees);
     do{
         if(confSemFees<minTime){
             printf("\nMoney isnt negative!");
-            printf("\nConference or seminar registration fees:");
+            printf("\nConference or seminar registration fees:$");
             scanf("%lf", &confSemFees);
         }
     }while(confSemFees<minTime);
-    printf("\nAny hotel expenses:");
+    printf("\nAny hotel expenses:$");
     scanf("%lf", &hotelFee);
     do{
         if(hotelFee<minTime){
             printf("\nMoney isn't negative!");
-            printf("\nAny hotel expenses:");
+            printf("\nAny hotel expenses:$");
             scanf("%lf", &hotelFee);
         }
     }while(hotelFee<minTime);
     hotelFee = hotel(hotelFee, totalDays);
     
-    printf("\nAmount spent on breakfast:");
+    printf("\nAmount spent on breakfast:$");
     scanf("%lf", &breakfast);
-    printf("\nAmount spent on lunch:");
+    do{
+        if(breakfast<minTime){
+            printf("\nAmount spent on breakfast:$");
+            scanf("%lf", &breakfast);
+        }
+    }while(breakfast<minTime);
+    printf("\nAmount spent on lunch:$");
     scanf("%lf", &lunch);
-    printf("\nAmount spent on dinner:");
+    do{
+        if(lunch<minTime){
+            printf("\nAmount spent on lunch:$");
+            scanf("%lf", &lunch);
+        }
+    }while(lunch<minTime);
+    printf("\nAmount spent on dinner:$");
     scanf("%lf", &dinner);
+    do{
+        if(dinner<minTime){
+            printf("\nAmount spent on dinner:$");
+            scanf("%lf", &dinner);
+        }
+    }while(dinner<minTime);
+    
     totalFood = breakfast + lunch + dinner;
     calcPark = calcParking(parkingFees, parkingDays);
     TotalOverall = TotalExpense(airFare, rentalPrice, privateValue, calcPark, taxiFee, confSemFees, hotelFee, totalFood);
