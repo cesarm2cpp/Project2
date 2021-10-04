@@ -1,54 +1,54 @@
 #include "calculate.h"
 
 float calcParking(float parkingFees,int parkingDays){
-    float sponsor = 6.0 * parkingDays;
+    float sponsor = PARKING_COVERED_PER_DAY * parkingDays;
     float parkingPrice = parkingFees-sponsor; 
     return parkingPrice;
 }
 float carMileage(float privateCar){
-    float price = privateCar * .27;
+    float price = privateCar * GAS_PRICE_PER_MILE;
     return price;
 }
 float tax(float taxiFee, float taxiDays){
-    float temp = 10 * taxiDays;
+    float temp = TAXI_COVERED_PER_DAY * taxiDays;
     float price = (taxiDays * taxiFee) - temp;
     return price;
 }
 float hotel(float hotelFee, float totalDays){
-    float temp = 90 * totalDays;
+    float temp = HOTEL_COVERED_PER_NIGHT * totalDays;
     float price = (hotelFee * totalDays) - temp;
     return price;
 }
 float bf(float b, float a, float dep){
     float meal;
     if(dep<7.0){
-        meal = b - 9;
+        meal = b - BREAKFAST_COVERED;
         return meal;
     }
     if(a>8.0){
-        meal = b - 9;
+        meal = b - BREAKFAST_COVERED;
         return meal;
     }
 }
 float lch(float l, float a, float dep){
     float meal;
     if(dep<12.0){
-        meal = l-12.0;
+        meal = l-LUNCH_COVERED;
         return meal;
     }
     if(a>13.0){
-        meal = l-12.0;
+        meal = l-LUNCH_COVERED;
         return meal;
     }
 }
 float dr(float d, float a, float dep){
     float meal;
     if(dep<18.0){
-        meal = d-16.0;
+        meal = d-DINNER_COVERED;
         return meal;
     }
     if(a>19.0){
-        meal = d-16.0; 
+        meal = d-DINNER_COVERED; 
         return meal;
     }
 }

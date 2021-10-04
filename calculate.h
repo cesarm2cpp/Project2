@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <string.h> // if you use a struct or union.
+#include "Tools.h"
 
 float calcParking(float parkingFees,int parkingDays);
 float carMileage(float privateCar);
