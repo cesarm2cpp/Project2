@@ -9,7 +9,7 @@
 |               | Help teammates debug calculate.c and calculate.h, optimize code
 | Abigail Pinkus| Implement calculate.c and calculate.h files
 |               | Debug calculation files and optimize user inputs functions
-| Keon Joong Kim| ...
+| Keon Joong Kim| Attemped implementing function for rental-car-price calculation
 
 
 ## Build Structure
