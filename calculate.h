@@ -4,14 +4,14 @@
 #include <stdio.h>
 #include <string.h> // if you use a struct or union.
 
-double calcParking(double parkingFees,int parkingDays);
-double carMileage(double privateCar);
-double tax(double taxiFee, double taxiDays);
-double hotel(double hotelFee, double totalDays);
-double bf(double b, double a, double dep);
-double lch(double l, double a, double dep);
-double dr(double d, double a, double dep);
-double TotalExpense(double airFare, double rentalPrice,double privateValue,double calcPark,double taxiFee,double confSemFees,double hotelFee,double totalFood);
-double Totaltemp(double airFare,double rentalPrice,double privateValue, double confSemFees);
+float calcParking(float parkingFees,int parkingDays);
+float carMileage(float privateCar);
+float tax(float taxiFee, float taxiDays);
+float hotel(float hotelFee, float totalDays);
+float bf(float b, float a, float dep);
+float lch(float l, float a, float dep);
+float dr(float d, float a, float dep);
+float TotalExpense(float airFare, float rentalPrice,float privateValue,float calcPark,float taxiFee,float confSemFees,float hotelFee,float totalFood);
+float Totaltemp(float airFare,float rentalPrice,float privateValue, float confSemFees);
 
 #endif
