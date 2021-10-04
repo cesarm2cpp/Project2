@@ -3,10 +3,10 @@
 ## Team members 🤘
 | Name        | Task |
 | ------      | ----------- |
-| Van Huynh   | implement Tools functions and.....
-| Cesar Martinez| implement Main.c and....
-| Abigail Pinkus| .....................
-| Keon Joong Kim| calculations c
+| Van Huynh   | Implement functions in main.c and calculate.c
+| Cesar Martinez| Implement main.c 
+| Abigail Pinkus| calculate.c and calculate.h
+| Keon Joong Kim| ............
 
 
 ## Build Structure
