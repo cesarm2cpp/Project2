@@ -241,11 +241,11 @@ int main()
     
     double valueCheck = TotalOverall - TotalAllow;
     if(valueCheck > 0){
-        printf("You owe the company:$%lf",valueCheck);
+        printf("\nYou owe the company:$%lf",valueCheck);
     }
     if(valueCheck < 0 ){
         double conv = abs(valueCheck);
-        printf("You saved the company:$%lf",conv);
+        printf("\nYou saved the company:$%lf",conv);
     }
     return 0;
 }
