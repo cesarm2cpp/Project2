@@ -1,9 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "calculate.h"
 
 int main()
 {
-    // doesn't involve different time
     int totalDays;
     double arrivalTime;
     double departTime;
@@ -205,6 +205,11 @@ int main()
     totalFood = breakfast + lunch + dinner;
     calcPark = calcParking(parkingFees, parkingDays);
     TotalOverall = TotalExpense(airFare, rentalPrice, privateValue, calcPark, taxiFee, confSemFees, hotelFee, totalFood);
+    double defaultPark = 6 * totalDays;
+    double defaultTaxi = 10 * totalDays;
+    double defaultHotel = 90 * totalDays;
+    double temp = Totaltemp(airFare, rentalPrice, privateValue, confSemFees);
+    double TotalAllow = temp + defaultPark + defaultHotel + 37;
     
     printf("\nTOTAl EXPENSES LIST");
     printf("\n--------------------------");
@@ -225,19 +230,22 @@ int main()
     printf("\nTrip:$%lf", airFare);
     printf("\nRental:$%lf", rentalPrice);
     printf("\nMileage:$%lf", privateValue );
-    printf("\nParking:$%lf");
-    printf("\nTaxi:$%lf);
+    printf("\nParking:$%lf", defaultPark);
+    printf("\nTaxi:$%lf", defaultTaxi);
     printf("\nConference:$%lf", confSemFees);
-    /*
-    printf("\nHotels:$%lf");
-    printf("\nBreakfast:$%lf");
-    printf("\nLunch:$%lf");
-    printf("\nDinner:$%lf");
-    printf("\nTotal allowable Expenses:$%lf");
-
-    printf("\nTOTAL SAVINGS");
-    printf("\n--------------------------");
-    printf("\nSavings:$%lf");
-    */
+    printf("\nHotels:$%lf", defaultHotel);
+    printf("\nBreakfast:$9");
+    printf("\nLunch:$12");
+    printf("\nDinner:$16");
+    printf("\nTotal allowable Expenses:$%lf", TotalAllow);
+    
+    double valueCheck = TotalOverall - TotalAllow;
+    if(valueCheck > 0){
+        printf("You owe the company:$%lf",valueCheck);
+    }
+    if(valueCheck < 0 ){
+        double conv = abs(valueCheck);
+        printf("You saved the company:$%lf",conv);
+    }
     return 0;
 }
