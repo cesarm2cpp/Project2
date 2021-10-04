@@ -40,7 +40,7 @@ int main()
 /*------------------------------------- 1. Get all user inputs -------------------------------------*/
     totalDays = getUserInt("Total Travel Days: ");
     departTime = getBoundedFloat("\nEnter departure time [0..24) - military time: ",minTime,maxTime);
-    arrivalTime = getBoundedFloat("\nEnter departure time [0..24) - military time: ",minTime,maxTime);
+    arrivalTime = getBoundedFloat("\nEnter arrival time [0..24) - military time: ",minTime,maxTime);
     airFare = getUserFloat("\nAmount of the round tip airfare: $");
 
     printf("\nDid you rent any car?(y or n):");
