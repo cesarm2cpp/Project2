@@ -84,7 +84,7 @@ int main()
     
     printf("\nDid you rent any car?(y or n):");
     scanf("%s", carRental);
-    if(carRental, "y")
+    if(strcmp(carRental, "y")==0)
     {
         printf("\nHow much was the car you had rented?:" );
         scanf("%lf", &rentalPrice);
@@ -100,9 +100,9 @@ int main()
         rentalPrice = 0.0;
     }
     
-    printf("\nDid you use your private car?");
+    printf("\nDid you use your private car?(y or n):");
     scanf("%s", privateC);
-    if(privateC, "y"){
+    if(strcmp(privateC, "y")==0){
         printf("\nHow many miles did you drive in your private vehicle? ");        
         scanf("%lf", &privateCar);
         do{
@@ -114,7 +114,7 @@ int main()
         }while(privateCar<minTime);
         privateValue = carMileage(privateCar);
     }else{
-        printf("\nDid not use private car(y or n):");
+        printf("\nDid not use private car");
         privateValue = 0.0;
     }
     
@@ -126,22 +126,21 @@ int main()
             printf("\nParking fees during trip: ");
             scanf("%lf", &parkingFees);
         }
-    }while(parkingFees<minTime);
-    
-    printf("\nAmount of days you used the parking: ");
-    scanf("%d", &parkingDays);
-    do{
-        if(parkingDays<minTime){
-            printf("\nDays are not in negative");
+        else if(parkingFees > minTime){
             printf("\nAmount of days you used the parking: ");
             scanf("%d", &parkingDays);
+            do{
+                if(parkingDays<minTime){
+                printf("\nAmount of days you used the parking: ");
+                scanf("%d", &parkingDays);
+                }
+            }while(parkingDays<minTime);
         }
-    }while(parkingDays<minTime);
+    }while(parkingFees<minTime);
     
     printf("\nDid you use the taxi(y or n):");
     scanf("%s", taxiUse);
-    if(taxiUse, "y")
-    {
+    if(strcmp(taxiUse, "y")==0){
         printf("\nTaxi fees: ");
         scanf("%lf", &taxiFee);
         do{
@@ -150,20 +149,23 @@ int main()
                 printf("\nTaxi fees: ");
                 scanf("%lf", &taxiFee);
             }
+            else if(taxiFee > minTime){
+                printf("\nAmount of days used on taxi:");
+                scanf("%d", &taxiDays);
+                do{
+                    if(taxiDays<minTime){
+                        printf("\nAmount of days used on taxi:");
+                        scanf("%d", &taxiDays);
+                    }
+                }while(taxiDays<minTime);
+                taxiFee = tax(taxiFee, taxiDays);
+            }
         }while(taxiFee<minTime);// taxiUse -> taxiFee
     }
     else{
         printf("\nNo taxi was used");
     }
-    printf("\nAmount of days used on taxi:");
-    scanf("%d", &taxiDays);
-    do{
-        if(taxiDays<minTime){
-            printf("\nAmount of days used on taxi:");
-            scanf("%d", &taxiDays);
-        }
-    }while(taxiDays<minTime);
-    taxiFee = tax(taxiFee, taxiDays);
+
     printf("\nConference or seminar registration fees:");
     scanf("%lf", &confSemFees);
     do{
