@@ -2,7 +2,11 @@
 #include "Tools.h"
 #include "calculate.c"
 
+<<<<<<< HEAD
 int writeCalculations(int miles, double parkingFees, int parkingDays, char taxiUse[10], double taxiFee, int taxiDays, double hotelFee, int hotelDays, double arrivalTime, double departTime, int totalDays, double breakfastFees, double lunchFees, double dinnerFees) {
+=======
+int writeCalculations(int miles, double parkingFees, int parkingDays, char taxiUse[10], double taxiFee, int taxiDays, double hotelFee, int totalDays,double carRental) {
+>>>>>>> 1bd37a5deb3285a724c15c1e8eddef66be36977b
     printf("Miles Fees: %d\n", calculateMiles(miles));
     printf("Parking Fees: %d\n", calculateParkingFees(parkingFees, parkingDays));
     if(taxiUse, 'y') {
@@ -39,7 +43,8 @@ int main()
     double hotelFee;
     int hotelDays;  // can be different from totalDays Ex: we can go 4 days and 3 nights
     char carRental[10];
-    char taxiUse[10]; 
+    char taxiUse[10];
+    char privateC[10];
     double minTime = 0.0; //min number is 1
     double maxTime = 24.0; //max number is 10
 
@@ -107,7 +112,7 @@ int main()
     scanf("%s", carRental);
     if(carRental, "y")
     {
-        printf("How many miles did you drive in your private vehicle:" );
+        printf("How much was the car you had rented?:" );
         scanf("%d", &miles);
         do{
             if(miles<minTime){
@@ -120,6 +125,23 @@ int main()
     else{
         printf("No car was rented");
     }
+    
+    printf("\nDid you use your private car?)
+    scanf("%s", privateC);
+    if(privateC, "y"){
+        printf("How many miles did you drive in your private vehicle? "):
+        scanf("%d", &privateCar);
+        do{
+            if(privateCar<minTime){
+                printf("\nNo such thing as negative mile!");
+                printf("\nHow many miles did you drive in your private vehicle:" );
+                scanf("%d", &miles);
+            }
+        }while(privateCar<minTime);
+    }else{
+        printf("\nDid not use private car");
+    }
+    
     printf("\nParking fees during trip: ");
     scanf("%lf", &parkingFees);
     do{
@@ -191,7 +213,11 @@ int main()
     printf("Total Dinner Fees:");
     scanf("%lf", &dinnerFees);
 
+<<<<<<< HEAD
     writeCalculations(miles, parkingFees, parkingDays, taxiUse, taxiFee, taxiDays, hotelFee, hotelDays, arrivalTime, departTime, totalDays, breakfastFees, lunchFees, dinnerFees);
+=======
+    writeCalculations(miles, parkingFees, parkingDays, carRental, taxiUse, taxiFee, taxiDays, hotelFee, totalDays);
+>>>>>>> 1bd37a5deb3285a724c15c1e8eddef66be36977b
     
     return 0;
 }

@@ -41,6 +41,7 @@ int calculateHotelFees(double hotelFee, int hotelDays, int totalDays) {// compan
     }
     return hotelFee;
 }
+<<<<<<< HEAD
 
 // Calculate Breakfast
 int calculateBreakfast(double arrivalTime, double departTime, int totalDays, double breakfastFees) {// company BREAKFAST_COVERED = 9
@@ -118,7 +119,9 @@ int calculateDinner(double arrivalTime, double departTime, int totalDays, double
     return dinner;
 }
 
+<<<<<<< HEAD
 // Calculate Meals
 int calculateMealFees(double arrivalTime, double departTime, int totalDays, double breakfastFees, double lunchFees, double dinnerFees) {
     return calculateBreakfast(arrivalTime, departTime, totalDays, breakfastFees) + calculateLunch(arrivalTime, departTime, totalDays, lunchFees) + calculateDinner(arrivalTime, departTime, totalDays, dinnerFees);
 }
+
