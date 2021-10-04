@@ -9,11 +9,20 @@ int main()
     double departTime;
     double airFare;
     double carRent;
-    int miles;
+    double miles;
     double privateCar;
     double milesDriven;
     double registrationFee;
     double confSemFees;
+    double rentalPrice;
+    double rentalValue;
+    double privateValue;
+    double breakfast;
+    double lunch;
+    double dinner;
+    double totalFood;
+    double calcPark;
+    double TotalOverall;
 
     // fees that are partly covered by company
     double parkingFees;
@@ -37,28 +46,27 @@ int main()
             scanf("%d", &totalDays);
         }
     }while(totalDays<minTime);
-    calcTrip(totalDays);
     
     
     printf("Enter departure time (0..24 military time):");
-    scanf("%lf", &arrivalTime);
+    scanf("%lf", &departTime);
     do{
-        if(arrivalTime < minTime){
+        if(departTime < minTime){
             printf("\nTime can't be negative");
             printf("\nEnter departure time (0..24 military time):");
             scanf("%lf", &arrivalTime);
         }
-        if(arrivalTime > maxTime)
+        if(departTime > maxTime)
         {
             printf("\nThat time does not exist");
             printf("\nEnter departure time (0..24 military time):");
             scanf("%lf", &arrivalTime);
         }
     }
-    while(arrivalTime > maxTime || arrivalTime < minTime);
+    while(departTime > maxTime || departTime < minTime);
     
     printf("\nEnter arrival time (0..24 military time):");
-    scanf("%lf", &departTime);
+    scanf("%lf", &arrivalTime);
         do{
         if(arrivalTime < minTime){
             printf("\nTime can't be negative");
@@ -72,7 +80,7 @@ int main()
             scanf("%lf", &departTime);
         }
     }
-    while(departTime > maxTime || departTime < minTime);
+    while(arrivalTime > maxTime || arrivalTime < minTime);
 
     printf("Amount of the round trip airfare: ");
     scanf("%lf", &airFare);
@@ -84,24 +92,24 @@ int main()
             scanf("%lf", &airFare);
         }
     }while(airFare<minTime);
-    air(airFare);
+
     
-    printf("Did you rent any car?(y or n):");
+    printf("\nDid you rent any car?(y or n):");
     scanf("%s", carRental);
     if(carRental, "y")
     {
-        printf("How much was the car you had rented?:" );
-        scanf("%d", &miles);
+        printf("\nHow much was the car you had rented?:" );
+        scanf("%lf", &rentalPrice);
         do{
-            if(miles<minTime){
-                printf("\nNo such thing as negative mile!");
-                printf("\nHow many miles did you drive in your private vehicle:" );
-                scanf("%d", &miles);
+            if(rentalPrice<minTime){
+                printf("\nNo such thing as negative money!");
+                printf("\nHow much was the car you had rented?:" );
+                scanf("%lf", &rentalPrice);
             }
-        }while(miles<minTime);
-    }
-    else{
+        }while(rentalPrice<minTime);
+    }else{
         printf("No car was rented");
+        rentalPrice = 0.0;
     }
     
     printf("\nDid you use your private car?");
@@ -113,11 +121,13 @@ int main()
             if(privateCar<minTime){
                 printf("\nNo such thing as negative mile!");
                 printf("\nHow many miles did you drive in your private vehicle:" );
-                scanf("%d", &miles);
+                scanf("%lf", &privateCar);
             }
         }while(privateCar<minTime);
+        privateValue = carMileage(privateCar);
     }else{
         printf("\nDid not use private car");
+        privateValue = 0.0;
     }
     
     printf("\nParking fees during trip: ");
@@ -161,11 +171,11 @@ int main()
     scanf("%d", &taxiDays);
     do{
         if(taxiDays<minTime){
-            printf("\nAmount of days used");
             printf("\nAmount of days used on taxi:");
             scanf("%d", &taxiDays);
         }
     }while(taxiDays<minTime);
+    taxiFee = tax(taxiFee, taxiDays);
     printf("Conference or seminar registration fees:");
     scanf("%lf", &confSemFees);
     do{
@@ -184,35 +194,50 @@ int main()
             scanf("%lf", &hotelFee);
         }
     }while(hotelFee<minTime);
+    hotelFee = hotel(hotelFee, totalDays);
     
+    printf("Amount spent on breakfast:");
+    scanf("%lf", &breakfast);
+    printf("Amount spent on lunch:");
+    scanf("%lf", &lunch);
+    printf("Amount spent on dinner:");
+    scanf("%lf", &dinner);
+    totalFood = breakfast + lunch + dinner;
+    calcPark = calcParking(parkingFees, parkingDays);
+    TotalOverall = TotalExpense(airFare, rentalPrice, privateValue, calcPark, taxiFee, confSemFees, hotelFee, totalFood);
     
     printf("\nTOTAl EXPENSES LIST");
     printf("\n--------------------------");
     printf("\nTrip:$%lf", airFare);
-    printf("\nRental:$");
-    printf("\nMileage:$");
-    printf("\nParking:$");
-    printf("\nTaxi:$");
-    printf("\nConference:$");
-    printf("\nHotels:$");
-    printf("\nMeals:$");
-    printf("\nTotal Expenses:$\n");
-
+    printf("\nRental:$%lf", rentalPrice);
+    printf("\nMileage:$%lf", privateValue );
+    printf("\nParking:$%lf", calcPark);
+    printf("\nTaxi:$%lf", taxiFee);
+    printf("\nConference:$%lf", confSemFees);
+    printf("\nHotels:$%lf", hotelFee);
+    printf("\nBreakfast:$%lf", bf(breakfast, arrivalTime, departTime));
+    printf("\nLunch:$%lf", lch(lunch, arrivalTime, departTime));
+    printf("\nDinner:$%lf",dr(dinner, arrivalTime, departTime));
+    printf("\nTotal Expenses:$%lf", TotalOverall);
+    
     printf("\nTOTAL ALLOWABLE EXPENSES");
     printf("\n--------------------------");
-    printf("\nTrip:$");
-    printf("\nRental:$");
-    printf("\nMileage:$");
-    printf("\nParking:$");
-    printf("\nTaxi:$");
-    printf("\nConference:$");
-    printf("\nHotels:$");
-    printf("\nMeals:$");
-    printf("\nTotal allowable Expenses:$\n");
+    printf("\nTrip:$%lf", airFare);
+    printf("\nRental:$%lf", rentalPrice);
+    printf("\nMileage:$%lf", privateValue );
+    printf("\nParking:$%lf");
+    printf("\nTaxi:$%lf);
+    printf("\nConference:$%lf", confSemFees);
+    /*
+    printf("\nHotels:$%lf");
+    printf("\nBreakfast:$%lf");
+    printf("\nLunch:$%lf");
+    printf("\nDinner:$%lf");
+    printf("\nTotal allowable Expenses:$%lf");
 
     printf("\nTOTAL SAVINGS");
     printf("\n--------------------------");
-    printf("\nSavings:$");
-    
+    printf("\nSavings:$%lf");
+    */
     return 0;
 }
