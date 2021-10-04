@@ -29,7 +29,6 @@ double bf(double b, double a, double dep){
         meal = b - 9;
         return meal;
     }
-
 }
 double lch(double l, double a, double dep){
     double meal;
@@ -55,5 +54,10 @@ double dr(double d, double a, double dep){
 }
 double TotalExpense(double airFare, double rentalPrice,double privateValue,double calcPark,double taxiFee,double confSemFees,double hotelFee,double totalFood){
     double Total = airFare + rentalPrice + privateValue + calcPark + taxiFee + confSemFees + hotelFee + totalFood;
+    return Total;
+}
+
+double Totaltemp(double airFare,double rentalPrice,double privateValue, double confSemFees){
+    double Total = airFare + rentalPrice + privateValue + confSemFees;
     return Total;
 }
