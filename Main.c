@@ -2,13 +2,17 @@
 #include "Tools.h"
 #include "calculate.c"
 
-int writeCalculations(int miles, double parkingFees, int parkingDays, char taxiUse[10], double taxiFee, int taxiDays, double hotelFee, int totalDays) {
+int writeCalculations(int miles, double parkingFees, int parkingDays, char taxiUse[10], double taxiFee, int taxiDays, double hotelFee, int hotelDays, double arrivalTime, double departTime, int totalDays, double breakfastFees, double lunchFees, double dinnerFees) {
     printf("Miles Fees: %d\n", calculateMiles(miles));
     printf("Parking Fees: %d\n", calculateParkingFees(parkingFees, parkingDays));
     if(taxiUse, 'y') {
         printf("Taxi Fees: %d\n", calculateTaxiFees(taxiUse, taxiFee, taxiDays));
     }
-    printf("Hotel Fees: %d\n", calculateHotelFees(hotelFee, totalDays));
+    printf("Hotel Fees: %d\n", calculateHotelFees(hotelFee, hotelDays, totalDays));
+    printf("Breakfast Fees: %d\n", calculateBreakfast(arrivalTime, departTime, totalDays, breakfastFees));
+    printf("Lunch Fees: %d\n", calculateLunch(arrivalTime, departTime, totalDays, lunchFees));
+    printf("Dinner Fees: %d\n", calculateDinner(arrivalTime, departTime, totalDays, dinnerFees));
+    printf("Meal Fees: %d\n", claculateMealFees(arrivalTime, departTime, totalDays, breakfastFees, lunchFees, dinnerFees));
     
     return 0;
 }
@@ -38,6 +42,11 @@ int main()
     char taxiUse[10]; 
     double minTime = 0.0; //min number is 1
     double maxTime = 24.0; //max number is 10
+
+    // Abigail Vars
+    double breakfastFees;
+    double lunchFees;
+    double dinnerFees;
     
     printf("Total travel days:");
     scanf("%d", &totalDays);
@@ -69,12 +78,12 @@ int main()
     printf("\nEnter arrival time (0..24 military time):");
     scanf("%lf", &departTime);
         do{
-        if(arrivalTime < minTime){
+        if(departTime < minTime){
             printf("\nTime can't be negative");
             printf("\nEnter departure time (0..24 military time):");
             scanf("%lf", &departTime);
         }
-        if(arrivalTime > maxTime)
+        if(departTime > maxTime)
         {
             printf("\nThat time does not exist");
             printf("\nEnter departure time (0..24 military time):");
@@ -138,12 +147,12 @@ int main()
         printf("Taxi fees: ");
         scanf("%lf", &taxiFee);
         do{
-            if(taxiFee<minTime){// taxiUse -> taxiFee
+            if(taxiFee<minTime){// Abigail taxiUse -> taxiFee
                 printf("\nFees are not negative");
                 printf("\nTaxi fees: ");
                 scanf("%lf", &taxiFee);
             }
-        }while(taxiFee<minTime);// taxiUse -> taxiFee
+        }while(taxiFee<minTime);// Abigail taxiUse -> taxiFee
     }
     else{
         printf("No taxi was used");
@@ -175,8 +184,14 @@ int main()
             scanf("%lf", &hotelFee);
         }
     }while(hotelFee<minTime);
+    printf("Total breakfast fees:");
+    scanf("%lf", &breakfastFees);
+    printf("Total lunch fees:");
+    scanf("%lf", &lunchFees);
+    printf("Total Dinner Fees:");
+    scanf("%lf", &dinnerFees);
 
-    writeCalculations(miles, parkingFees, parkingDays, taxiUse, taxiFee, taxiDays, hotelFee, totalDays);
+    writeCalculations(miles, parkingFees, parkingDays, taxiUse, taxiFee, taxiDays, hotelFee, hotelDays, arrivalTime, departTime, totalDays, breakfastFees, lunchFees, dinnerFees);
     
     return 0;
 }
